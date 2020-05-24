@@ -7,7 +7,7 @@
       </el-select>
     </div>
     <element-table ref="ElementTable" :data="formData">
-      <el-table-column prop="meetingNumber" label="会议室编号"></el-table-column>
+      <el-table-column prop="meetingRoomNumber" label="会议室编号"></el-table-column>
       <el-table-column prop="meetingName" label="会议名称"></el-table-column>
       <el-table-column prop="name" label="预约人"></el-table-column>
       <el-table-column prop="phone" label="联系电话"></el-table-column>

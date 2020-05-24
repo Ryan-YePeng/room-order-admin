@@ -5,7 +5,7 @@
       <el-button type="success" class="el-icon-search ml-5" @click="getSignIn">搜索</el-button>
     </div>
     <element-table ref="ElementTable" :data="formData">
-      <el-table-column prop="meetingNumber" label="会议室编号"></el-table-column>
+      <el-table-column prop="meetingRoomNumber" label="会议室编号"></el-table-column>
       <el-table-column prop="meetingName" label="会议名称"></el-table-column>
       <el-table-column prop="remark" label="会议备注"></el-table-column>
       <el-table-column prop="count" label="签到人数"></el-table-column>
