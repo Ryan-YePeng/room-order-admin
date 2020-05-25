@@ -6,7 +6,7 @@
       v-show="isShow"
   >
     <div class="container">
-      <h1 class="title minW">会议室预约小程序后台</h1>
+      <h1 class="title minW">欢迎来到会议室预约小程序后台</h1>
     </div>
   </div>
 </template>
@@ -65,7 +65,8 @@
       color: white;
 
       .title {
-        font-size: 30px;
+        font-size: 35px;
+        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
       }
     }
   }

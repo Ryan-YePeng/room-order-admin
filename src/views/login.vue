@@ -94,8 +94,25 @@
               .then(() => {
                 this.isLoading = false;
                 this.$setLocalStorage("username", this.form.username);
-                this.$router.push({name: "home"});
-                this.$storeSet("setActive", "首页");
+                if (this.$storeGet.user.role === 'ROLE_COMPANY') {
+                  this.$storeSet("setBreadcrumb", ["预约管理", "预约列表"]);
+                  this.$storeSet("addTags", {
+                    title: "预约列表",
+                    path: "appointment_list",
+                    index: ["预约管理", "预约列表"]
+                  });
+                  this.$storeSet("setActive", "预约列表");
+                  this.$router.push({name: "appointment_list"});
+                } else {
+                  this.$storeSet("setBreadcrumb", ["用户管理", "企业用户"]);
+                  this.$storeSet("addTags", {
+                    title: "企业用户",
+                    path: "enterprise",
+                    index: ["用户管理", "企业用户"]
+                  });
+                  this.$storeSet("setActive", "企业用户");
+                  this.$router.push({name: "enterprise"});
+                }
               })
               .catch(() => {
                 this.isLoading = false;

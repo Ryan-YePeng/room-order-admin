@@ -2,7 +2,10 @@
   <div class="index" ref="index" id="index" v-title data-title="会议室预约小程序后台">
     <el-container style="flex: 1">
       <div style="display: flex;justify-content: space-between;background-color: white">
-        <LeftMenu :isCollapse="isCollapse" :isSmall="isSmall"></LeftMenu>
+        <div style="display: flex">
+          <h1 style="line-height: 60px;font-size: 23px;margin: 0 15px;min-width: 250px">会议室预约小程序后台</h1>
+          <LeftMenu :isCollapse="isCollapse" :isSmall="isSmall"></LeftMenu>
+        </div>
         <el-dropdown trigger="click" style="cursor: pointer">
           <div class="avatar-box">
             <el-avatar shape="square" :size="45" :src="user.icon">

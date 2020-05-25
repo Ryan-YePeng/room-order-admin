@@ -28,8 +28,9 @@
           <span>{{ scope.row.createTime | formatDateTime }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" fixed="right" align="center" width="80">
+      <el-table-column label="操作" fixed="right" align="center" width="150">
         <template slot-scope="scope">
+          <el-button type="primary" icon="el-icon-edit" @click.stop="edit(scope.row)"></el-button>
           <delete-button
               :ref="scope.row.id"
               :id="scope.row.id"
@@ -39,14 +40,18 @@
       </el-table-column>
     </element-table>
     <pagination ref="Pagination" @getNewData="getUser"/>
+    <edit-user ref="EditUser" @update="getUser"/>
   </el-card>
 </template>
 
 <script>
   import {getUserApi, delUserApi} from '@/api/user'
+  import EditUser from './edit'
+  import {objectEvaluate} from "@/utils/common";
 
   export default {
     name: "User",
+    components: {EditUser},
     data() {
       return {
         formData: [],
@@ -57,6 +62,11 @@
       this.getUser();
     },
     methods: {
+      edit(obj) {
+        let _this = this.$refs.EditUser;
+        objectEvaluate(_this.form, obj);
+        _this.visible = true;
+      },
       getUser() {
         let pagination = this.$refs.Pagination;
         let param = {

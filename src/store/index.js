@@ -21,7 +21,7 @@ const plugins = [
   }),
   createPersistedState({
     key: "meetingRoomLayout",
-    storage: window.sessionStorage,
+    storage: window.localStorage,
     reducer: val => ({layout: val.layout})
   }),
   createPersistedState({
